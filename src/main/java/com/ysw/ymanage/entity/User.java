@@ -1,6 +1,8 @@
 package com.ysw.ymanage.entity;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class User {
     private String id;
@@ -11,6 +13,26 @@ public class User {
     private String createUser;
     private Date modDate;
     private String modUser;
+
+    private Set<String> roles = new HashSet<>();    //用户所有角色值，用于shiro做角色权限的判断
+    private Set<String> Rights = new HashSet<>();    //用户所有权限值，用于shiro做资源权限的判断
+
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
+    }
+
+    public Set<String> getRights() {
+        return Rights;
+    }
+
+    public void setRights(Set<String> rights) {
+        Rights = rights;
+    }
 
     public String getId() {
         return id;
